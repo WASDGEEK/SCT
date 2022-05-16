@@ -3,9 +3,7 @@
     apt-get install -y git
 ## 安装
 
-    git clone https://github.com/WASDGEEK/SCT.git
-    cd SCT
+    cd /opt
+    git clone https://github.com/WASDGEEK/SecureTunnel.git
+    cd SecureTunnel
 
-
-
-* Usage: ./SecureTunnel_Client -config config.json
