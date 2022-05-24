@@ -15,3 +15,12 @@
     查看状态/日志 systemctl status SecureTunnel -l
     开机自启动命令 systemctl enable SecureTunnel
     关闭开机自启动命令 systemctl disable SecureTunnel
+## 禁用IPv6
+    echo " ">>/etc/sysctl.conf
+    echo "# made for disabled IPv6 in $(date +%F)">>/etc/sysctl.conf
+    echo 'net.ipv6.conf.all.disable_ipv6 = 1'>>/etc/sysctl.conf
+    echo 'net.ipv6.conf.default.disable_ipv6 = 1'>>/etc/sysctl.conf
+    echo 'net.ipv6.conf.lo.disable_ipv6 = 1'>>/etc/sysctl.conf
+    tail -5 /etc/sysctl.conf
+    sysctl -p
+    netstat -anptl
